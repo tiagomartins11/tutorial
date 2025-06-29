@@ -1,23 +1,84 @@
 ---
+const pagetitle = "Sobre Mim";
 
+const identify = {
+    firstName: "Tiago",
+    country: "Brasil",
+    ocupaction: "Estudante de Tecnologia",
+    hobbies: ["Jogos", "Fotografia", "Programação"],
+};
+
+const skills = [
+    "Java",
+    "C#",
+    "Kotlin",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Astro",
+    "React",
+    "Node.js",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pagetitle}</title>
+    </head>
+    <body>
         <a href="/">Início</a>
         <a href="/about">Sobre</a>
         <a href="/blog">Blog</a>
-		<h1>Sobre Mim</h1>
+        <h1>{pagetitle}</h1>
         <h2>... e meu site Astro</h2>
 
         <p>Este é um site de exemplo criado com Astro.</p>
-        <p>Astro é um framework moderno para construir sites rápidos e otimizados.</p>
-	</body>
+        <p>
+            Astro é um framework moderno para construir sites rápidos e
+            otimizados.
+        </p>
+
+        <p>Aqui estão alguns fatos sobre mim:</p>
+
+        <ul>
+            <li>Meu nome é {identify.firstName}.</li>
+            <li>
+                Eu moro no {identify.country} e minha ocupaçao é: {
+                    identify.ocupaction
+                }.
+            </li>
+            {
+                identify.hobbies.length >= 2 && (
+                    <li>
+                        Dois dos meus hobbies são: {identify.hobbies[0]} and{" "}
+                        {identify.hobbies[1]}
+                    </li>
+                )
+            }
+        </ul>
+        <p>Minhas habilidades são:</p>
+        <ul>
+            {skills.map((habilidade) => <li>{habilidade}</li>)}
+        </ul>
+
+        {happy && <p>Estou feliz em estar aprendendo Astro!</p>}
+
+        {finished && <p>Eu terminei esse tutorial!</p>}
+
+        {
+            goal === 3 ? (
+                <p>Minha meta é terminar em 3 dias.</p>
+            ) : (
+                <p>Minha meta não é em 3 dias.</p>
+            )
+        }
+    </body>
 </html>
