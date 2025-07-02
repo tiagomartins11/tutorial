@@ -21,6 +21,20 @@ h1 {
 }
 
 /* Navigation styles */
+
+.hamburguer {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburguer .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
 .nav-links {
     width: 100%;
     top: 5rem;
@@ -39,8 +53,7 @@ h1 {
     font-weight: bold;
     text-transform: uppercase;
 }
-.nav-links a:hover,
-.nav-links a:focus {
+.nav-links a:hover, a:focus {
     background-color: #ff9776;
 }
 
@@ -60,5 +73,8 @@ h1 {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+  .hamburguer {
+    display: none;
   }
 }
