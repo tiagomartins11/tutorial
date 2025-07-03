@@ -1,25 +1,8 @@
 ---
-import Cabecalho from '../components/Cabecalho.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
+import BaseLayouts from "../layouts/BaseLayouts.astro";
 const pageTitle = "Pagina Inicial";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Cabecalho />
-		<h1>Meu Site Astro</h1>
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayouts pageTitle="{pageTitle}">
+	<h2>O subtítulo incrível do meu blog</h2>
+</BaseLayouts>
